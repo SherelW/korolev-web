@@ -10,7 +10,9 @@
     background-color: rgba(0,0,0,0.8);
     overflow: hidden;
 }
-
+a{
+    color: blue;
+}
 .modal-content {
     background-color: #fefefe;
     margin: 2% auto;
