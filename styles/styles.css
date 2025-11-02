@@ -1,0 +1,752 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+:root {
+    --background-color: #000;
+    --background-color-main: #2a2928;
+    --backgrond-button: #c75b8c;
+    --backgrond-button-hover: #b3507d;
+    --border-color: #6d6e70;
+
+    --font-color: #fff;
+    --font-size: 16px;
+    --font-size-large: 32px;
+}
+
+body {
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sansserif;
+    background-color: var(--background-color-main);
+}
+
+
+a{
+    color: var(--font-color);
+    text-decoration: none;
+}
+header {
+    width: 100%;
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-size: var(--font-size-large);
+    height: ;
+}
+
+.logo {
+    padding: 10px;
+}
+
+.project-name {
+    padding-bottom: 10px;
+}
+
+.nav {
+    background-color: var(--background-color);
+    font-weight: 600;
+}
+
+.nav-list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    text-align: center;
+}
+
+.nav-element {
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.nav-element:hover {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: var(--background-color-main);
+    transform: translateY(-3px);
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.about {
+
+    color: var(--font-color);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.img-avatar {
+    padding: 20px;
+    border-radius: 30px;
+    width: 20vw;
+    height: 20vw;
+
+}
+
+.about-text {
+    font-size: var(--font-size-large);
+    line-height: 1.5;
+}
+
+.about-btn {
+    color: var(--font-color);
+    background-color: var(--backgrond-button);
+    border: 2px solid;
+    border-radius: 10px;
+    height: 50px;
+    width: 150px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.about-btn:hover {
+    font-size: 14px;
+    background-color: var(--backgrond-button-hover);
+}
+
+.expirience {
+    font-size: var(--font-size);
+    padding: 10px;
+    color: var(--font-color);
+
+    background-color: var(--background-color-main);
+}
+
+.myskills {
+    text-align: center;
+    font-size: var(--font-size-large);
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 8px;
+    align-items: center;
+}
+
+.skill-name {
+    font-weight: bold;
+    color: var(--font-color);
+}
+
+.skill-percent {
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.progress-container {
+    grid-column: 1 / -1;
+    width: 100%;
+    background-color: #6e6b6b;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--backgrond-button);
+    width: 0;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.myprojects {
+    text-align: center;
+    font-size: var(--font-size-large);
+    color: var(--font-color);
+}
+
+.myprojects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-card {
+    color: var(--font-color);
+}
+
+.img-project {
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    width: 260px;
+    height: 150px;
+    object-fit: cover;
+    /* Чтобы изображение не искажалось при увеличении */
+}
+
+.img-project:hover {
+    transform: scale(1.1);
+    /* Увеличиваем только само изображение */
+    /* width и height убираем, используем только transform */
+}
+
+.myprojects-name {
+    text-align: center;
+    font-size: var(--font-size);
+    margin: 0px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 20px;
+    /* Добавляем отступы между карточками */
+}
+
+.projects-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.diary-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--font-color);
+}
+
+.diary-header {
+    text-align: center;
+    font-size: var(--font-size-large);
+    margin-bottom: 30px;
+}
+
+/* Сетка для основного контента */
+.diary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Стили для прогресса */
+.progress-section {
+    background-color: rgb(60, 60, 61);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.progress-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--font-color);
+}
+
+/* Стили для списка прогресса */
+.progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.progress-date {
+    color: #ccc;
+    font-size: 14px;
+    min-width: 80px;
+}
+
+.progress-text {
+    flex: 1;
+    color: var(--font-color);
+}
+
+.progress-status {
+    font-size: 18px;
+}
+
+.status-completed {
+    color: #4CAF50;
+}
+
+.status-in-progress {
+    color: #FF9800;
+}
+
+/* Стили для курсов */
+.courses-section {
+    background-color: rgb(60, 60, 61);  
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.courses-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--font-color);
+}
+
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.course-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-name {
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.course-percent {
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+/* Кнопка добавления записи */
+.add-record-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.add-record-btn {
+    background-color: var(--backgrond-button);
+    color: var(--font-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-record-btn:hover {
+    background-color: var(--backgrond-button-hover);
+    transform: translateY(-2px);
+}
+
+
+/* Стили для страницы контактов */
+.contacts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: var(--font-color);
+}
+
+.contacts-header {
+    text-align: center;
+    font-size: var(--font-size-large);
+    margin-bottom: 40px;
+    color: var(--font-color);
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Стили формы */
+.contact-form-section {
+    background-color: rgb(60, 60, 61);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    color: var(--font-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-input,
+.form-textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--font-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--backgrond-button);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #ccc;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    min-height: 20px;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    background-color: var(--backgrond-button);
+    color: var(--font-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--backgrond-button-hover);
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    background-color: #6d6e70;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Стили контактной информации */
+.contact-info-section {
+    background-color: rgb(60, 60, 61);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.info-title {
+    color: var(--font-color);
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-text {
+    color: var(--font-color);
+    font-size: 16px;
+}
+
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Валидация */
+.form-input.error,
+.form-textarea.error {
+    border-color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.form-input.success,
+.form-textarea.success {
+    border-color: #4CAF50;
+}
+
+/* Футер */
+.contacts-footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--font-color);
+    background-color: var(--background-color);
+    margin-top: 50px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contacts-container {
+        padding: 20px 15px;
+    }
+    
+    .contact-form-section,
+    .contact-info-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-header {
+        font-size: 28px;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 10px 12px;
+    }
+    
+    .submit-btn {
+        padding: 12px 25px;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .diary-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .progress-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .progress-date {
+        min-width: auto;
+    }
+}
+
+@media(min-width:768px) {
+    main {}
+}
