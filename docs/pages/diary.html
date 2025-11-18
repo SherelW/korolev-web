@@ -29,7 +29,7 @@
                 <h1 class="diary-header">Учебный дневник</h1>
 
                 <div class="diary-grid">
-                    
+
                     <section class="progress-section">
                         <h2 class="progress-title">Мой учебный прогресс</h2>
                         <div class="progress-list">
@@ -56,7 +56,7 @@
                         </div>
                     </section>
 
-                    
+
                     <section class="courses-section">
                         <h2 class="courses-title">Текущие курсы</h2>
                         <div class="courses-list">
@@ -91,13 +91,143 @@
                     </section>
                 </div>
 
-                
-                <div class="add-record-section">
-                    <button class="add-record-btn">Добавить запись</button>
-                </div>
+
+
             </div>
         </main>
 
+        <div class="container">
+            <button class="add-btn" id="addEntryBtn">Добавить запись</button>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Мои проекты</h3>
+                    <p>Разработка современных веб-приложений</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Email: maxkor@mail.com</p>
+                    <p>Телефон: +7 (999) 123-45-67</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Соцсети</h3>
+                    <div class="social-links">
+                        <a href="#">VK</a>
+                        <a href="#">Telegram</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Мой сайт. Все права защищены.</p>
+            </div>
+
+        </footer>
+
+        <!-- Модальное окно -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>Новая запись</h2>
+                    <button class="close-btn" id="closeModal">×</button>
+                </div>
+
+                <form id="entryForm" class="modal-form">
+                    <div class="form-group">
+                        <label>Заголовок:</label>
+                        <input type="text" id="entryTitle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Текст записи:</label>
+                        <textarea id="entryText" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Дата:</label>
+                        <input type="date" id="entryDate" required>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="cancel-btn" id="cancelBtn">Отмена</button>
+                        <button type="submit" class="save-btn">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="alert" id="alert">Запись добавлена!</div>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const addEntryBtn = document.getElementById('addEntryBtn');
+                const modalOverlay = document.getElementById('modalOverlay');
+                const closeModal = document.getElementById('closeModal');
+                const cancelBtn = document.getElementById('cancelBtn');
+                const entryForm = document.getElementById('entryForm');
+                const alert = document.getElementById('alert');
+
+                if (!addEntryBtn) {
+                    console.error('Кнопка addEntryBtn не найдена!');
+                    return;
+                }
+
+                addEntryBtn.onclick = function () {
+                    modalOverlay.style.display = 'block';
+                    document.getElementById('entryDate').valueAsDate = new Date();
+                };
+
+                function closeModalWindow() {
+                    modalOverlay.style.display = 'none';
+                    entryForm.reset();
+                }
+
+                closeModal.onclick = closeModalWindow;
+                cancelBtn.onclick = closeModalWindow;
+
+
+                modalOverlay.onclick = function (event) {
+                    if (event.target === modalOverlay) {
+                        closeModalWindow();
+                    }
+                };
+
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape' && modalOverlay.style.display === 'block') {
+                        closeModalWindow();
+                    }
+                });
+
+
+                entryForm.onsubmit = function (event) {
+                    event.preventDefault();
+
+
+                    const title = document.getElementById('entryTitle').value;
+                    const text = document.getElementById('entryText').value;
+                    const date = document.getElementById('entryDate').value;
+
+
+                    console.log('Добавлена запись:', { title, text, date });
+
+
+                    closeModalWindow();
+
+
+                    alert.style.display = 'block';
+                    setTimeout(function () {
+                        alert.style.display = 'none';
+                    }, 2000);
+
+
+                };
+            });
+        </script>
 </body>
 
 </html>

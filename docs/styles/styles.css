@@ -148,10 +148,11 @@ body {
 }
 
 
-a{
+a {
     color: var(--font-color);
     text-decoration: none;
 }
+
 header {
     width: 100%;
     text-align: center;
@@ -159,6 +160,85 @@ header {
     color: var(--font-color);
     font-size: var(--font-size-large);
     height: ;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 30px 0 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: white;
+    border-color: #007bff;
+    background: #007bff;
+}
+
+.footer-bottom {
+    background: #222;
+    padding: 15px 0;
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    color: #999;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer {
+        padding: 20px 0 0;
+    }
 }
 
 .logo {
@@ -306,22 +386,22 @@ header {
 
 .projects-card {
     color: var(--font-color);
+    margin-bottom: 10px;
 }
 
 .img-project {
     border-radius: 10px;
     border: 2px solid var(--border-color);
     transition: all 0.3s ease;
-    width: 260px;
-    height: 150px;
+    width: 360px;
+    height: 200px;
     object-fit: cover;
-    /* Чтобы изображение не искажалось при увеличении */
+
 }
 
 .img-project:hover {
     transform: scale(1.1);
-    /* Увеличиваем только само изображение */
-    /* width и height убираем, используем только transform */
+
 }
 
 .myprojects-name {
@@ -330,11 +410,13 @@ header {
     margin: 0px;
 }
 
+.projects {}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 500px);
     justify-content: center;
-    gap: 20px;
+    gap: 0px;
     /* Добавляем отступы между карточками */
 }
 
@@ -424,7 +506,7 @@ header {
 
 /* Стили для курсов */
 .courses-section {
-    background-color: rgb(60, 60, 61);  
+    background-color: rgb(60, 60, 61);
     padding: 25px;
     border-radius: 15px;
     border: 1px solid var(--border-color);
@@ -675,12 +757,230 @@ header {
     margin-top: 50px;
 }
 
-/* Анимации */
+
+.container {
+    text-align: center;
+}
+
+.add-btn {
+    background: var(--backgrond-button);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.add-btn:hover {
+    background: var(--backgrond-button-hover);
+}
+
+/* Модальное окно */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    margin: 100px auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Форма */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Уведомление */
+.alert {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Записи */
+.entry {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .modal {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .modal-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .modal-header h2 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        flex: none;
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+        /* Предотвращает zoom на iOS */
+        padding: 12px;
+    }
+
+    .alert {
+        right: 10px;
+        left: 10px;
+        top: 10px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        margin: 10px auto;
+        padding: 12px;
+    }
+
+    .modal-header h2 {
+        font-size: 18px;
+    }
+
+    .add-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 320px) {
+    .modal {
+        width: 98%;
+        margin: 5px auto;
+        padding: 10px;
+    }
+
+    .modal-header h2 {
+        font-size: 16px;
+    }
+
+    .form-buttons {
+        gap: 5px;
+    }
+}
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -688,9 +988,19 @@ header {
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
 }
 
 .shake {
@@ -703,11 +1013,11 @@ header {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .contacts-container {
         padding: 20px 15px;
     }
-    
+
     .contact-form-section,
     .contact-info-section {
         padding: 20px;
@@ -718,12 +1028,12 @@ header {
     .contacts-header {
         font-size: 28px;
     }
-    
+
     .form-input,
     .form-textarea {
         padding: 10px 12px;
     }
-    
+
     .submit-btn {
         padding: 12px 25px;
     }
